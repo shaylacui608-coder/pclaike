@@ -189,26 +189,31 @@
       .toolbox-back { z-index: 1; right: 26%; bottom: -11%; width: 43%; }
       .toolbox-middle { z-index: 2; right: 21%; bottom: -3%; width: 40%; }
       .toolbox-main { z-index: 3; top: 15.5%; right: 6%; width: 30%; overflow: hidden; border: 1px solid #101820; border-radius: 24px 24px 0 0; background: #fff; box-shadow: 0 16px 34px rgb(20 45 72 / .14); }
-      .eco-card.promo .eco-stage { inset: auto 12% 0; width: 76%; height: 68.5%; }
-      .traffic-phone { z-index: 2; right: 21%; bottom: 0; width: 58%; }
-      .traffic-left { z-index: 3; right: 65%; bottom: 0; width: 35%; }
-      .traffic-right { z-index: 4; right: 0; bottom: 35%; width: 42.6%; }
+      .eco-card.promo .eco-stage { inset: 0; width: auto; height: auto; }
+      .traffic-main { z-index: 2; top: 41.6%; left: 28.5%; width: 43.6%; }
+      .traffic-avatar-male { z-index: 1; top: 51.1%; left: 25.2%; width: 5.9%; }
+      .traffic-location { z-index: 4; top: 50.1%; left: 66.2%; width: 12.4%; }
+      .traffic-flame { z-index: 4; top: 74.4%; left: 19.5%; width: 12.4%; }
+      .traffic-avatar-female { z-index: 4; top: 75.8%; left: 69%; width: 10%; }
       .data-main { z-index: 2; right: 28.5%; bottom: -10%; width: 43%; }
       .data-metric { position: absolute; z-index: 4; display: grid; width: 153px; height: 78px; grid-template-columns: 45px 1fr; grid-template-rows: 21px 25px; align-content: center; align-items: center; column-gap: 12px; padding: 0 17px; border-radius: 22px; background: #fff; }
       .data-metric.left { top: 203px; left: 73px; box-shadow: 0 13px 28px rgb(14 158 245 / .13); }
       .data-metric.right { top: 228px; left: 291px; box-shadow: 0 13px 28px rgb(255 129 36 / .12); }
-      .data-metric img { width: 45px; height: 45px; grid-row: 1 / 3; object-fit: contain; }
+      .data-metric img { width: 120px; max-width: none; height: 120px; grid-row: 1 / 3; object-fit: contain; transform: translate(-38px, 20px); }
       .data-metric span { overflow: visible; color: var(--text-3); font-size: 13px; line-height: 21px; white-space: nowrap; }
       .data-metric strong { font-size: 20px; font-weight: 500; line-height: 25px; white-space: nowrap; }
-      .channel-back { z-index: 1; right: 31%; bottom: -17%; width: 31%; --piece-transform: rotate(-7deg); }
-      .channel-front { z-index: 3; right: 8%; bottom: -63%; width: 31%; --piece-transform: rotate(6deg); }
+      .channel-back { z-index: 1; top: 20.6%; right: 23.2%; width: 43%; transform: rotate(-7deg); transform-origin: 50% 86%; --piece-transform: rotate(-7deg); }
+      .channel-front { z-index: 3; top: calc(11.7% + 8px); right: calc(.8% + 32px); width: 43%; transform: rotate(6deg); transform-origin: 50% 86%; --piece-transform: rotate(6deg); }
       .eco-card.replay .primary-piece { animation: eco-primary .54s var(--ease) both; }
       .eco-card.replay .secondary-piece { animation: eco-secondary .48s var(--ease) .24s both; }
       .eco-card.replay .tertiary-piece { animation: eco-secondary .48s var(--ease) .34s both; }
-      @keyframes eco-primary { from { opacity: 0; transform: var(--piece-transform, translateZ(0)) translateY(34px) scale(.96); } to { opacity: 1; transform: var(--piece-transform, translateZ(0)); } }
-      @keyframes eco-secondary { from { opacity: 0; transform: var(--piece-transform, translateZ(0)) translateY(25px) scale(.86); } to { opacity: 1; transform: var(--piece-transform, translateZ(0)); } }
+      @keyframes eco-primary { from { opacity: 0; transform: translateY(34px) var(--piece-transform, translateZ(0)) scale(.96); } to { opacity: 1; transform: translateY(0) var(--piece-transform, translateZ(0)); } }
+      @keyframes eco-secondary { from { opacity: 0; transform: translateY(25px) var(--piece-transform, translateZ(0)) scale(.86); } to { opacity: 1; transform: translateY(0) var(--piece-transform, translateZ(0)); } }
 
-      .onboarding { padding: 72px 32px 92px; background: linear-gradient(180deg, #e9f8ff 0%, #f7fcff 100%); }
+      .onboarding { position: relative; overflow: hidden; isolation: isolate; padding: 72px 32px 92px; background: linear-gradient(180deg, #eaf8ff 0%, #f6fcff 66%, #fff 100%); }
+      .onboarding::before { position: absolute; z-index: 0; inset: -120px -80px 0; background: radial-gradient(ellipse 35% 50% at 19% 17%, rgb(88 201 255 / .38) 0%, rgb(142 220 255 / .22) 38%, transparent 74%), radial-gradient(ellipse 29% 44% at 52% 5%, rgb(171 226 255 / .42) 0%, rgb(208 240 255 / .18) 44%, transparent 76%), radial-gradient(ellipse 36% 54% at 92% 15%, rgb(150 215 255 / .28) 0%, rgb(203 237 255 / .16) 43%, transparent 78%); filter: blur(36px); content: ""; pointer-events: none; }
+      .onboarding::after { position: absolute; z-index: 0; right: 0; bottom: 0; left: 0; height: 40%; background: linear-gradient(180deg, transparent 0%, rgb(255 255 255 / .62) 58%, #fff 100%); content: ""; pointer-events: none; }
+      .onboarding > .section-inner { position: relative; z-index: 1; }
       .onboarding .section-head { margin-bottom: 30px; }
       .steps-tabs { display: flex; gap: 4px; margin-bottom: 22px; }
       .steps-tabs button { padding: 8px 18px; border: 0; border-radius: 999px; color: var(--text-2); background: rgb(255 255 255 / .48); }
@@ -217,15 +222,17 @@
       .step-card { position: relative; height: 310px; overflow: hidden; border-radius: 26px; background: rgb(255 255 255 / .78); }
       .step-copy { position: relative; z-index: 3; padding-top: 27px; text-align: center; }
       .step-copy h3 { margin: 0; font-size: 20px; font-weight: 600; }
-      .step-copy p { margin: 10px 0 0; color: var(--text-2); font-size: 13px; }
+      .step-copy p { margin: 14px 0 0; color: var(--text-2); font-size: 13px; }
+      .step-time { display: inline-block; margin-top: 9px; padding: 4px 9px; border-radius: 999px; color: #387aff; background: #edf5ff; font-size: 11px; line-height: 18px; }
       .step-stage { position: absolute; right: 0; bottom: 0; left: 0; height: 215px; }
+      .step-card:nth-child(-n + 2) .step-stage { transform: translateY(32px); }
       .step-piece { position: absolute; object-fit: contain; object-position: bottom; }
-      .step-one-main { left: 21%; bottom: -54px; width: 56%; }
-      .step-one-guide { z-index: 2; left: 9%; bottom: -8px; width: 34%; filter: drop-shadow(0 9px 14px rgb(56 82 104 / .09)); }
-      .step-two-main { z-index: 1; left: 24%; bottom: -76px; width: 53%; }
-      .step-two-card-a { z-index: 3; left: 4%; bottom: 3px; width: 31%; transform: rotate(-7deg); }
-      .step-two-card-b { z-index: 4; left: 57%; bottom: 20px; width: 27%; transform: rotate(6deg); }
-      .step-two-card-c { z-index: 2; right: 2%; bottom: -20px; width: 25%; transform: rotate(10deg); }
+      .step-one-main { left: 22%; bottom: 20px; width: 49%; }
+      .step-one-guide { z-index: 2; left: 48%; bottom: 50px; width: 30%; filter: drop-shadow(0 9px 14px rgb(56 82 104 / .09)); }
+      .step-two-main { z-index: 1; top: 52px; left: 27%; width: 47%; }
+      .step-two-card-a { z-index: 3; left: 24%; bottom: 10px; width: 20%; transform: rotate(-7deg); }
+      .step-two-card-b { z-index: 5; left: 42.5%; bottom: -3px; width: 22.5%; }
+      .step-two-card-c { z-index: 4; left: 63.5%; bottom: 14px; width: 20%; transform: rotate(6deg); }
       .step-three-main { left: 26%; bottom: -33px; width: 49%; }
 
       .faq { padding: 86px 32px 76px; }
@@ -368,9 +375,9 @@
           <div class="section-head"><div data-reveal><h2>丰富的产品生态，<br />经营的起点在抖音来客</h2></div><a class="outline-link" href="#onboarding" data-reveal>立即入驻 →</a></div>
           <div class="eco-grid" data-stagger>
             <article class="eco-card tools" tabindex="0" data-reveal><div class="eco-copy"><h3>经营工具箱</h3><p>抖音来客提供商品管理、权限管理等<br />全套经营工具，助力高效经营</p></div><div class="eco-stage"><img class="eco-piece toolbox-back secondary-piece" src="assets/figma-export/curated/image 1636403631.png" alt="" /><img class="eco-piece toolbox-middle tertiary-piece" src="assets/figma-export/curated/image 1636403630.png" alt="" /><img class="eco-piece toolbox-main primary-piece" src="assets/figma-export/curated/product-merchant-dashboard.png" alt="商家经营面板" /></div></article>
-            <article class="eco-card promo" tabindex="0" data-reveal><div class="eco-copy"><h3>流量推广</h3><p>超多营销推广工具，同城引流更轻松</p></div><div class="eco-stage"><img class="eco-piece traffic-phone primary-piece" src="assets/figma-export/curated/product-traffic-phone.png" alt="流量推广工具" /><img class="eco-piece traffic-left secondary-piece" src="assets/figma-export/curated/product-traffic-icon-left.png" alt="" /><img class="eco-piece traffic-right tertiary-piece" src="assets/figma-export/curated/product-traffic-icon-right.png" alt="" /></div></article>
-            <article class="eco-card data" tabindex="0" data-reveal><div class="eco-copy"><h3>数据监控</h3><p>流量、订单数据全掌控，指引经营风向标</p></div><div class="eco-stage"><img class="eco-piece data-main primary-piece" src="assets/figma-export/curated/image 1636403629.png" alt="数据监控面板" /><div class="data-metric left secondary-piece"><img src="assets/figma-export/curated/核销金额icon.png" alt="" /><span>成交金额</span><strong>97,570</strong></div><div class="data-metric right tertiary-piece"><img src="assets/figma-export/curated/成交金额icon.png" alt="" /><span>核销金额</span><strong>64,897</strong></div></div></article>
-            <article class="eco-card channels" tabindex="0" data-reveal><div class="eco-copy"><h3>多渠道、多形式获客</h3><p>分享店铺日常和环境，就能在抖音触达你的<br />顾客，吸引顾客到店</p></div><div class="eco-stage"><img class="eco-piece channel-back secondary-piece" src="assets/figma-export/curated/image 1636403627.png" alt="团购内容页" /><img class="eco-piece channel-front primary-piece" src="assets/figma-export/curated/product-local-life-feed.jpg" alt="本地生活内容页" /></div></article>
+            <article class="eco-card promo" tabindex="0" data-reveal><div class="eco-copy"><h3>流量推广</h3><p>超多营销推广工具，同城引流更轻松</p></div><div class="eco-stage"><img class="eco-piece traffic-main primary-piece" src="assets/figma-export/curated/流量推广-1.png" alt="流量推广工具" /><img class="eco-piece traffic-avatar-male secondary-piece" src="assets/figma-export/curated/流量推广-5.png" alt="合作达人头像" /><img class="eco-piece traffic-location secondary-piece" src="assets/figma-export/curated/流量推广-2.png" alt="本地推广" /><img class="eco-piece traffic-flame tertiary-piece" src="assets/figma-export/curated/流量推广-3.png" alt="热门推广" /><img class="eco-piece traffic-avatar-female tertiary-piece" src="assets/figma-export/curated/流量推广-4.png" alt="合作达人头像" /></div></article>
+            <article class="eco-card data" tabindex="0" data-reveal><div class="eco-copy"><h3>数据监控</h3><p>流量、订单数据全掌控，指引经营风向标</p></div><div class="eco-stage"><img class="eco-piece data-main primary-piece" src="assets/figma-export/curated/image 1636403629.png" alt="数据监控面板" /><div class="data-metric left secondary-piece"><img src="assets/figma-export/curated/数据监控-1.png" alt="" /><span>成交金额</span><strong>97,570</strong></div><div class="data-metric right tertiary-piece"><img src="assets/figma-export/curated/数据监控-2.png" alt="" /><span>核销金额</span><strong>64,897</strong></div></div></article>
+            <article class="eco-card channels" tabindex="0" data-reveal><div class="eco-copy"><h3>多渠道、多形式获客</h3><p>分享店铺日常和环境，就能在抖音触达你的<br />顾客，吸引顾客到店</p></div><div class="eco-stage"><img class="eco-piece channel-back secondary-piece" src="assets/figma-export/curated/多渠道-1.png" alt="团购内容页" /><img class="eco-piece channel-front primary-piece" src="assets/figma-export/curated/多渠道-2.png" alt="本地生活内容页" /></div></article>
           </div>
         </div>
       </section>
@@ -380,8 +387,8 @@
           <div class="section-head"><div data-reveal><h2>最快 1 小时，即可入驻抖音来客</h2></div><a class="outline-link" href="#faq" data-reveal>立即入驻 →</a></div>
           <div class="steps-tabs" data-reveal><button class="active">单店入驻</button><button>连锁入驻</button></div>
           <div class="step-grid" data-stagger>
-            <article class="step-card" data-reveal><div class="step-copy"><h3>01 认领门店</h3><p>搜索或创建自己的门店</p></div><div class="step-stage"><img class="step-piece step-one-main" src="assets/figma-export/curated/image 1636403643.png" alt="选择门店" /><img class="step-piece step-one-guide" src="assets/figma-export/curated/Mask group.png" alt="商家引导形象" /></div></article>
-            <article class="step-card" data-reveal><div class="step-copy"><h3>02 填写资质</h3><p>上传门店所需资质材料</p></div><div class="step-stage"><img class="step-piece step-two-main" src="assets/figma-export/curated/image 1636403550.png" alt="上传资质" /><img class="step-piece step-two-card-a" src="assets/figma-export/curated/Group 2130910330.png" alt="" /><img class="step-piece step-two-card-b" src="assets/figma-export/curated/Group 2147242235.png" alt="" /><img class="step-piece step-two-card-c" src="assets/figma-export/curated/Group 2147242236.png" alt="" /></div></article>
+            <article class="step-card" data-reveal><div class="step-copy"><h3>01 认领门店</h3><span class="step-time">预计花费3分钟</span><p>搜索或创建自己的门店</p></div><div class="step-stage"><img class="step-piece step-one-main" src="assets/figma-export/curated/认领门店-1.png" alt="提交门店证明材料" /><img class="step-piece step-one-guide" src="assets/figma-export/curated/认领门店-2.png" alt="商家引导形象" /></div></article>
+            <article class="step-card" data-reveal><div class="step-copy"><h3>02 填写资质</h3><span class="step-time">预计花费3分钟</span><p>上传门店所需资质材料</p></div><div class="step-stage"><img class="step-piece step-two-main" src="assets/figma-export/curated/填写资质-1.png" alt="上传资质材料" /><img class="step-piece step-two-card-a" src="assets/figma-export/curated/填写资质-2.png" alt="行业资质信息" /><img class="step-piece step-two-card-b" src="assets/figma-export/curated/填写资质-3.png" alt="营业执照" /><img class="step-piece step-two-card-c" src="assets/figma-export/curated/填写资质-4.png" alt="法人信息" /></div></article>
             <article class="step-card" data-reveal><div class="step-copy"><h3>03 平台审核</h3><p>审核结果将以短信形式通知</p></div><div class="step-stage"><img class="step-piece step-three-main" src="assets/figma-export/curated/image 1636403644.png" alt="平台审核中" /></div></article>
           </div>
         </div>
